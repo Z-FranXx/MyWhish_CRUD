@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Wishlist
 from .forms import ListForm
 from django.http import Http404
+from django.contrib import messages
 
 # Create your views here.
 
@@ -11,15 +12,16 @@ def inicio(request):
     return render(request, 'pages/inicio.html')
 
 # Acceder a la whislist
-def wishlist(request):
+def wishlist_view(request):
     lists = Wishlist.objects.all() # Obtener todos los elementos de la lista
     return render(request, 'whislist/frame.html', {'lists': lists})
 
-# Acceder a crear 
+# Vista para crear nuevos elementos en la wishlist
 def create(request):
     form = ListForm(request.POST or None, request.FILES or None) # Crear el formulario
     if form.is_valid():
         form.save() # Guardar el formulario
+        messages.success(request, "Elemento agregado correctamente a la Wishlist.")
         return redirect('whislist') # Redirigir a la whislist
     return render(request, 'whislist/create.html', {'form': form}) # Enviar el formulario a la vista
 

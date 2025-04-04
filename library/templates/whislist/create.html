@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block titulo %} Agregar nuevo contenido {% endblock %}
+{% block titulo %} Crear nuevo elemento en la Wishlist {% endblock %}
 
 {% block contenido %}
 
@@ -17,3 +17,10 @@
 
 
 {% endblock %}
+
+<!-- Mensaje de alerta -->
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success mt-3">{{ message }}</div>
+  {% endfor %}
+{% endif %}

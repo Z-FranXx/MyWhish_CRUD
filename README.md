@@ -40,16 +40,16 @@ source venv/bin/activate
 # Crea la base de datos en MySQL usando phpMyAdmin (por ejemplo: mywhish_crud)
 
 # Asegúrate de tener configurado el acceso a MySQL en settings.py:
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'mywhish_crud',
-#         'USER': 'root',
-#         'PASSWORD': '',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
-#     }
-# }
+ DATABASES = {
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'mywhish_crud',
+         'USER': 'root',
+         'PASSWORD': '',
+         'HOST': 'localhost',
+         'PORT': '3306',
+     }
+ }
 
 # Aplica las migraciones
 python manage.py makemigrations

@@ -4,6 +4,7 @@ from . import views
 from django.conf import settings
 from django.contrib.staticfiles.urls import static
 
+# Urls de la aplicacion
 urlpatterns = [
     path('', views.inicio, name='inicio'),
     path('whislist/', views.wishlist_view, name='whislist'),

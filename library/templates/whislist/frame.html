@@ -1,0 +1,61 @@
+{% extends "index.html" %} 
+{% block titulo %} Whislist {% endblock %} 
+{% block contenido %}
+
+<div class="card">
+  <div class="card-header">
+    <a
+      name=""
+      id=""
+      class="btn btn-primary"
+      href="{% url 'crear' %}"
+      role="button"
+      >Agregar nueva lista</a
+    >
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">MyWhish</h4>
+
+    <div class="table-responsive">
+      <table class="table table-primary">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for list in lists %}
+          <tr class="">
+            <td scope="row">{{ list.id }}</td> <!-- Cambiar por el id de la lista -->
+            <td>{{ list.title }}</td> <!-- Cambiar por el nombre de la lista -->
+            <!-- Cambiar por la imagen de la lista -->
+            <td>
+              {% if list.image %}
+                <img src="{{ list.image.url }}" height="100" />
+              {% else %}
+                No hay imagen disponible
+              {% endif %}
+            </td>
+             
+            <td>{{ list.description }}</td> <!-- Cambiar por la descripcion de la lista -->
+            <td>
+              <a name="" id="" class="btn btn-info" href="{% url 'editar' list.id %}" role="button"
+                >Editar</a
+              >
+              |
+              <a class="btn btn-danger" href="{% url 'eliminar' list.id %}" role="button">Eliminar</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer text-muted">Footer</div>
+</div>
+
+{% endblock %}

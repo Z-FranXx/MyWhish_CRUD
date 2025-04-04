@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block titulo %} Editar contenido {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">Editar contenido de la lista</div>
+    <div class="card-body">
+        <h4 class="card-title">Infromacion del contenido</h4>
+        
+        {% include 'whislist/form.html' %}
+
+    </div>
+    <div class="card-footer text-muted">Footer</div>
+</div>
+
+
+{% endblock %}

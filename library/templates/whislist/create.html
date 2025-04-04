@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block titulo %} Agregar nuevo contenido {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">Agregar contenido</div>
+    <div class="card-body">
+        <h4 class="card-title">Infromacion del contenido</h4>
+        
+        {% include 'whislist/form.html' %}
+
+    </div>
+    <div class="card-footer text-muted">Footer</div>
+</div>
+
+
+{% endblock %}

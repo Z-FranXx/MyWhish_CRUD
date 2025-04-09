@@ -33,7 +33,7 @@ venv\Scripts\activate
 source venv/bin/activate
 
 # Instala las dependencias
--  Django==5.0.7
+-  Django==5.2
 -  mysqlclient==2.2.7
 -  Pillow==11.1.0
 
